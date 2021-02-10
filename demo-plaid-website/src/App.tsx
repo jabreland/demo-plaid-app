@@ -1,35 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useQuery } from '@apollo/client';
+import { HELLO_QUERY } from './graphQL/queries';
 
 interface State{
   hello: string;
 }
 
-async function getHello(): Promise<State>{
-  const { data } = await axios.get('/api/hello');
-    return data;
-}
-
-function useGreeting(): State {
- const [data, setData] = useState<State>({hello:''})
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await getHello()
-      setData(result)
-      
-    }
-    fetchData();
-  }, [data])
-  return data;
-}
-
 function App() {
- const data = useGreeting();
+  const { data } = useQuery<State>(HELLO_QUERY);
+
   return (
     <div className="App">
       <header className="App-header">
-        {data.hello}
+        {data?.hello}
       </header>
     </div>
   );
