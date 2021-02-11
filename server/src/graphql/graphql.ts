@@ -1,9 +1,9 @@
 import { graphqlHTTP } from 'express-graphql';
-import { root } from './root';
+import { resolvers } from './resolvers';
 import { schema } from './schemas';
 
 export const graphqlEndPoint = graphqlHTTP({
   schema: schema,
-  rootValue: root,
+  rootValue: resolvers,
   graphiql: true,
 });

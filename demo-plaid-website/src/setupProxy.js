@@ -4,10 +4,18 @@ const target = process.env.REACT_APP_PROXY_SERVER;
 
 module.exports = function(app) {
   app.use(
-    '/graphql',
+    '/api',
     createProxyMiddleware({
       target,
       changeOrigin: true,
     })
-  )
+  );
+
+  // app.use(
+  //   '/graphql',
+  //   createProxyMiddleware({
+  //     target,
+  //     changeOrigin: true,
+  //   })
+  // )
 };
