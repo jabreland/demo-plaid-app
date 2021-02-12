@@ -11,15 +11,16 @@ interface LinkButtonProps {
 
 export function LinkButton({publicToken, confirmLinked}: LinkButtonProps): ReactElement {
   const [sendLinkToken, {data}] = useMutation(LINK_TOKEN);
-  const onSuccess = useCallback((token) => {
+  const onSuccess = useCallback(async (token) => {
     try{
-    sendLinkToken({variables: { token: token }})
+    const response = await sendLinkToken({variables: { token: token }})
     } catch(e) {
       console.log(e.message)
       throw new Error("Error exchanging key with server");
     }
     confirmLinked(true);
   }, []);
+
 
   const config = {
     token: publicToken,

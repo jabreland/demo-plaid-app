@@ -26,16 +26,38 @@ type Items {
     error: String
     institution_id: String
     item_id: String
-    webhook: String
 }
 
 type Accounts {
   accounts: [Account]
 }
 
+type Location {
+  address: String
+  city: String
+  region: String
+  country: String
+}
+
+type Transaction {
+  amount: String
+  iso_currency_code: String
+  category: String
+  date: String
+  location: Location
+  name: String
+  payment_channel: String
+}
+
+type Transactions {
+  transactions: [Transaction]
+  accounts: [Account]
+}
+
 type Query {
   getAccounts: [Account]
   getPublicKey: String
+  getTransactions(account_id: String): Transactions
 }
 
 type Mutation {
