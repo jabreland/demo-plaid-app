@@ -27,5 +27,30 @@ export const LINK_TOKEN = gql`
     exchangeLinkToken(token: $token)
   }
 `
+export const ACCOUNT_TRANSACTION = gql`
+query account($account_id: String!) {
+	getTransactions(account_id: $account_id) {
+    transactions {
+      date
+      amount
+      location {
+        city
+        country
+      }
+      name
+      payment_channel
+    }
+    accounts {
+      name
+      balances {
+        iso_currency_code
+        current
+      }
+      type
+    }
+  }
+}
+
+`
 
 

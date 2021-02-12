@@ -11,7 +11,7 @@ interface PlaidLinkModalProps {
 
 export default function PlaidLinkModal({show, handleClose, publicToken, confirmLinked} : PlaidLinkModalProps) {
     return (
-        <Modal show={show} onhide={handleClose}>
+        <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Plaid Demo App</Modal.Title>
             </Modal.Header>
@@ -23,5 +23,5 @@ export default function PlaidLinkModal({show, handleClose, publicToken, confirmL
                 <Button variant="secondary" onClick={()=>handleClose(false)}>Cancel</Button>
             </Modal.Footer>
         </Modal>
-    )
+    );
 }

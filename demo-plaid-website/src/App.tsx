@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BankAccountsView from './components/pages/BankAccountsView';
+import BankAccountsView from './components/pages/AllAccountsView';
 import MainNav from './components/MainNav';
 import PlaidLinkModal from './components/PlaidLinkModal';
 import { Redirect, BrowserRouter as Router, Route } from 'react-router-dom';
