@@ -1,4 +1,3 @@
-//import newPlaidClient from
 import { Account } from 'plaid';
 import newPlaidClient from '../plaid/plaidClient';
 import { PLAID_CLIENT_ID, PLAID_SECRET } from '../config/config';
