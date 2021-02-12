@@ -32,5 +32,8 @@
 ### To start the Website
 1. CD in to demo-plaid-websire
 1. npm install
+<<<<<<< HEAD
 1. npm run start
+=======
+>>>>>>> master
 
